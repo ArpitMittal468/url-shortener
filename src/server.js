@@ -5,7 +5,7 @@ const { listner } = require('./listner')
 const server = http.createServer(listner)
 
 server.listen(
-    8080,
+    process.env.PORT || 8080,
     "0.0.0.0",
     () => {
         console.log(
