@@ -1,0 +1,27 @@
+{
+  "name": "mini-project",
+  "version": "1.0.0",
+  "description": "Url Shortner",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArpitMittal468/url-shortener.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArpitMittal468/url-shortener/issues"
+  },
+  "homepage": "https://github.com/ArpitMittal468/url-shortener#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "socket.io": "^4.3.2"
+  }
+}

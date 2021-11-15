@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        let socket = io()
+        // make connection with server from user side
+        socket.on('connect', function (x) {
+            // console.log(x)
+            console.log('Connected to Server')
+        });
+
+        function getMessage() {
+            console.time()
+            socket.emit("kuchToh", {
+                "a": new Date()
+            })
+        }
+        socket.on('return', function(x){
+            console.log(x)
+            console.timeEnd()
+        })
+    </script>
+    <button onclick="getMessage()">Click</button>
+</body>
+
+</html>
