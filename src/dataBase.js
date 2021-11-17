@@ -1,7 +1,11 @@
 const { MongoClient } = require('mongodb')
 
-// let uri = "mongodb+srv://billuBhai:KiaNnsAQj5DhEUvr@cluster0.qusit.mongodb.net/billuData?retryWrites=true&w=majority"
-let uri = "mongodb://localhost:27017/"
+let uri;
+if ("true" == process.env.ISHEROKU)
+    uri = process.env.CONNLINK;
+else
+    uri = "mongodb://localhost:27017/"
+
 let client = new MongoClient(uri)
 
 async function connectToDataBase() {
@@ -10,6 +14,7 @@ async function connectToDataBase() {
         console.log('[DataBase Connected]')
     } catch (e) {
         console.log('[Not Connected To DataBase]')
+        console.log(e)
     }
 }
 connectToDataBase()
@@ -38,13 +43,13 @@ async function createNewLink(link) {
     await client.db('billuData').collection('urls').insertOne({
         'new': nw,
         'old': link
-    }) 
+    })
     return nw
 }
 
-async function getOg(shrt){
+async function getOg(shrt) {
     let x = await client.db('billuData').collection('urls').find({
-        'new' : shrt
+        'new': shrt
     }).toArray()
     if (x.length === 0) return false
     return x[0]['old']
