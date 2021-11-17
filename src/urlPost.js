@@ -12,7 +12,7 @@ async function urlPost(req, res) {
     })
 
     if (method !== 'POST') {
-        res.end('{"CD": "WR", "ST" : "Wrong Method"}')
+        res.end('{"CD": "WR", "ST" : "Wrong-Method"}')
         return
     }
 
@@ -22,7 +22,7 @@ async function urlPost(req, res) {
         link += data
         if (link.length >= 5000) {
             destroyed = true;
-            res.end('{"CD": "WR", "ST" : "Url To Long To Process"}')
+            res.end('{"CD": "WR", "ST" : "Url-To-Long-To-Process"}')
         }
     })
     req.on('end', async () => {
@@ -32,7 +32,7 @@ async function urlPost(req, res) {
         link = link.trim()
         try { new URL(link) }
         catch (_) {
-            res.end('{"CD": "WR", "ST" : "Invalid URL Formating"}')
+            res.end('{"CD": "WR", "ST" : "Invalid-URL-Formating"}')
             return
         }
         

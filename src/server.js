@@ -6,7 +6,7 @@ require('./dataBase')
 const server = http.createServer(listner)
 
 server.listen(
-    process.env.PORT || 8080,
+    process.env.PORT || 9999,
     "0.0.0.0",
     () => {
         console.log(

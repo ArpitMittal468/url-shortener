@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;800&family=Shippori+Antique&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/public/indexCss.css">
+</head>
+
+<body id="main"  class="scrobb">
+    <div id="page1" class="page1">
+        <div>
+            <h1>Make Your Links Shorter</h1>
+            <p>Just Make Them Smaller. Simply and Quickly.</p>
+            <div>
+                <a href="#page2">Get Started</a>
+            </div>
+        </div>
+        <img src="/public/Main.svg" alt="Something">
+    </div>
+    <div id="page2" class="page2">
+        <div class="p2n">
+            <h1>url Shortner</h1>
+            <a href="">About</a>
+        </div>
+        <img src="/public/Mid.svg" alt="">
+        <div class="linkBar">
+            <input type="text" placeholder="Place Your Link Here" id="input">
+            <button onclick="post()">Shorten It !</button>
+        </div>
+    </div>
+    <div id="page3" class="page3">
+        <img src="/public/P3.svg" alt="">
+        <div class="linkAni" id="linkAni">
+
+        </div>
+        <button id="copyBttn" onclick="copy()"> Copy </button>
+    </div>
+    <script src="/public/indexJs.js"></script>
+</body>
+</html>

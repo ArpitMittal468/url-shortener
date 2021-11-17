@@ -9,7 +9,8 @@ const { redirectOg } = require('./redirectOg');
 */
 function listner(req, res) {
     let url = req.url;
-    if (url === '/') index(req, res);
+    if (url === '/') url = '/public/index.html'
+    if (url.startsWith('/public')) index(req, res, url);
     else if (url == '/urlPost') urlPost(req, res)
     else redirectOg(req, res)
 }
